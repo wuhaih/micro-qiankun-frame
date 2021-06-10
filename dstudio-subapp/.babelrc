@@ -1,0 +1,36 @@
+{
+    "presets": [
+        "@babel/env",
+        [
+            "@vue/babel-preset-jsx",
+            {
+                "injectH": false
+            }
+        ],
+        [
+            "@babel/preset-typescript",
+            {
+                "isTSX": true,
+                "allExtensions": true
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-transform-typescript",
+        "@babel/plugin-transform-runtime",
+        ["@babel/plugin-proposal-decorators",{"legacy": true}],
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-syntax-jsx"
+    ],
+    "comments": false,
+    "env": {
+        "test": {
+            "presets": [
+                ["@babel/preset-env",{ "targets": { "node": true },"moudules": "commonjs"}],
+                "@babel/preset-typescript"
+            ]
+        }
+    },
+    "sourceType": "unambiguous"
+}
